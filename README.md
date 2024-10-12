@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-autocomplete-filter
+A reusable and highly efficient country autocomplete filter component built using React, TypeScript, and Next.js. This component provides fast and responsive search functionality, optimized for performance with features like debouncing, caching, and minimized re-renders.
 
-## Getting Started
+## Features
 
-First, run the development server:
+- 🔍 **Autocomplete**: Provides a real-time country search with an intuitive interface.
+- 💾 **Debouncing**: Limits excessive API calls by debouncing user input.
+- 📊 **Caching**: Caches previous search results to improve user experience by reducing load times.
+- ⚡ **Optimized Rendering**: Avoids unnecessary re-renders using React memoization and the `useReducer` hook for state management.
+- 🚀 **Next.js Integration**: Uses Next.js' `useRouter` and `useSearchParams` for managing query parameters seamlessly.
+
+## Installation
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/react-country-autocomplete-filter.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Install dependencies:
+```bash
+npm install
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
+You can integrate this component into any React application. Here’s an example of how to use it:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```typescript
+import { Filter } from './components/Filter';
 
-## Learn More
+function App() {
+  return (
+    <div className="App">
+      <Filter />
+    </div>
+  );
+}
 
-To learn more about Next.js, take a look at the following resources:
+export default App;
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
+* You can customize the appearance and behavior of the FilterInput component.
+* Modify debounce delay, API endpoints, or error handling according to your needs.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Components
+### Filter
+The main component that manages the state of the autocomplete feature and renders the input and results list.
 
-## Deploy on Vercel
+### FilterInput
+A reusable input field with debounced onChange functionality and query param updates via Next.js router.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### FilterList
+Renders the list of countries based on the search results.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### FilterItem
+Displays individual country items with the search term highlighted.
+
+## Contributions
+Feel free to submit issues or pull requests. Contributions to improve performance or add new features are always welcome.
