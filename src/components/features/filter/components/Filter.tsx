@@ -69,9 +69,13 @@ export const Filter = () => {
         Filter countries
       </h1>
       <div className="relative w-full max-w-md mx-auto">
-        <FilterInput isLoading={state.loading} onChange={handleChange} />
+        <FilterInput
+          searchTerm={searchTerm}
+          isLoading={state.loading}
+          onChange={handleChange}
+        />
         {!state.error && !state.loading && state.countries.length > 0 && (
-          <FilterList list={state.countries} />
+          <FilterList searchTerm={searchTerm} list={state.countries} />
         )}
         {state.error && (
           <div className="text-center py-6 text-gray-400 text-sm">

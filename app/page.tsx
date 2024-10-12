@@ -1,5 +1,11 @@
-import { Filter } from '@components';
+import { Suspense } from 'react';
+
+import { Filter, LoadingContent } from '@components';
 
 export default function Home() {
-  return <Filter />;
+  return (
+    <Suspense fallback={<LoadingContent />}>
+      <Filter />
+    </Suspense>
+  );
 }

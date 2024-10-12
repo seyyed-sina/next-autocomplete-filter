@@ -2,18 +2,16 @@
 import { memo } from 'react';
 
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation';
 
 import { TFilterItem } from '../filter.type';
 import { highlightMatch } from '../filter.utils';
 
 interface FilterItemProps {
+  searchTerm: string;
   filter: TFilterItem;
 }
 
-export const FilterItem = memo(({ filter }: FilterItemProps) => {
-  const searchParams = useSearchParams();
-  const searchTerm = searchParams.get('name') ?? '';
+export const FilterItem = memo(({ filter, searchTerm }: FilterItemProps) => {
   return (
     <li className="group">
       <div
