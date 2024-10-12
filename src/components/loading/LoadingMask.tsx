@@ -1,8 +1,6 @@
 import { FC, HTMLAttributes } from 'react';
 
-import { clx } from '@/utils/helper';
-
-// import { clx } from '@utils';
+import { clx } from '@utils';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   className?: string;

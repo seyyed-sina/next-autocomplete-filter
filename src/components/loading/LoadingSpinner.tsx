@@ -1,9 +1,6 @@
 import type { FC, SVGProps } from 'react';
 
-import { clx } from '@/utils/helper';
-
-// import { colorValues } from '@constants';
-// import { clx } from '@helpers';
+import { clx } from '@utils';
 
 export interface LoadingSpinnerProps extends SVGProps<SVGSVGElement> {
   size?: number;

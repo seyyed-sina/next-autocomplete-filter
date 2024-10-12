@@ -1,9 +1,8 @@
 import { FC, ReactNode } from 'react';
 
-// import { LoadingSpinner, LoadingSpinnerProps } from '@components';
-import { LoadingSpinner, LoadingSpinnerProps } from './LoadingSpinner';
-import { clx } from '@/utils/helper';
-// import { clx } from '@helpers';
+import { LoadingSpinner, LoadingSpinnerProps } from '@components';
+import { clx } from '@utils';
+
 
 interface Props extends LoadingSpinnerProps {
   title?: ReactNode;
